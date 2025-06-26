@@ -8,3 +8,11 @@ document.addEventListener('scroll', () => {
     header.classList.remove('header--dark');
   }
 });
+
+// Make home section transparent when scrolling down
+const home = document.querySelector('.home__container');
+const homeHeight = home.offsetHeight;
+document.addEventListener('scroll', () => {
+  const opacity = 1 - window.scrollY / homeHeight;
+  home.style.opacity = opacity < 0 ? 0 : opacity;
+});
