@@ -16,3 +16,13 @@ document.addEventListener('scroll', () => {
   const opacity = 1 - window.scrollY / homeHeight;
   home.style.opacity = opacity < 0 ? 0 : opacity;
 });
+
+// Show arrow when scrolling down
+const arrow = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+  if (window.scrollY > homeHeight) {
+    arrow.style.opacity = '1';
+  } else {
+    arrow.style.opacity = '0';
+  }
+});
